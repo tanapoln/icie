@@ -26,16 +26,37 @@ typedef vector<vi> vvi;
 typedef map<int,int> mii;
 typedef set<int> si;
 
-void solve() {
+int T[102][102] = {};
 
+void solve() {
+    int n, m, k;
+    cin >> n >> m >> k;
+    if (T[n][m] == k) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
 }
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
+    
+    memset(T, 0, sizeof(T));
 
-    // int tc; cin >> tc;
-    // FOR(i, tc)
+    FORL(i, 1, 100) {
+        T[i][1] = i-1;
+        FORL(k, 2, 100) { //move right
+            T[i][k] = i + T[i][k-1];
+        }
+    }
+
+    // FORL(k, 1, 100) {
+        // DEBUGARR(T[k], 1, 100)
+    // }
+
+    int tc; cin >> tc;
+    FOR(i, tc)
         solve();
 
     return 0;
