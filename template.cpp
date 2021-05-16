@@ -14,6 +14,7 @@
 #define MOD (1e9+7)
 #define divceil(n, d) (((n)/(d)) + ((n)%(d) > 0 ? 1 : 0))
 #define DEBUGARR(arr, s, e) {FORL(i, s, e){ cout << arr[i] << " "; } cout << endl;}
+#define DEBUGVEC(vec) {FOREACH(it, vec){ cout << *it << " "; } cout << endl;}
 
 using namespace std;
 
