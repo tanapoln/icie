@@ -27,16 +27,47 @@ typedef vector<vi> vvi;
 typedef map<int,int> mii;
 typedef set<int> si;
 
-void solve() {
+vector<ll> vals;
 
+ll powl(ll base, int p) {
+    ll res = base;
+    if (p == 0) return 1;
+
+    FORL(i, 2, p) {
+        res *= base;
+    }
+
+    return res;
+}
+
+void solve() {
+    ll n;
+    cin >> n;
+
+    int c = 0;
+
+    FOREACHR(it, vals) {
+        while(*it <= n) {
+            n -= *it;
+            c++;
+        }
+    }
+
+    if (c == 0) cout << -1 << endl;
+    else if (n != 0) cout << -1 << endl;
+    else cout << c << endl;
 }
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    // int tc; cin >> tc;
-    // FOR(i, tc)
+    FORL(i, 0, 15) {
+        vals.pb(2050 * powl(10, i));
+    }
+
+    int tc; cin >> tc;
+    FOR(i, tc)
         solve();
 
     return 0;

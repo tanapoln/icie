@@ -5,7 +5,6 @@
 #define FORR(a, b, c) for (int a = (b); (a) >= (c); (a)--)
 #define PI 3.1415926535897932384626433832795
 #define FOREACH(it, l) for (auto it = l.begin(); it != l.end(); it++)
-#define FOREACHR(it, l) for (auto it = l.rbegin(); it != l.rend(); it++)
 #define pb push_back
 #define MP make_pair
 #define max(a, b) ((a) < (b) ? (b) : (a))
@@ -27,16 +26,45 @@ typedef vector<vi> vvi;
 typedef map<int,int> mii;
 typedef set<int> si;
 
-void solve() {
+vector<ll> vals;
 
+void solve() {
+    ll n;
+    cin >> n;
+
+    int c = 0;
+    FOREACH(it, vals) {
+        if (*it <= n) c++;
+    }
+
+    cout << c << endl;
 }
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    // int tc; cin >> tc;
-    // FOR(i, tc)
+    FORL(i, 1, 9) {
+        vals.pb(i);
+    }
+    FORL(d, 1, 9) {
+        FORL(i, 1, 9) {
+            ll v = i;
+            FOR(k, d) {
+                v = v * 10 + i;
+            }
+            vals.pb(v);
+        }
+    }
+
+    // FOREACH(it, vals) {
+    //     cout << *it << " ";
+    // }
+    // cout << endl;
+
+
+    int tc; cin >> tc;
+    FOR(i, tc)
         solve();
 
     return 0;
