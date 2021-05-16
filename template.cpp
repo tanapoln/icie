@@ -8,6 +8,7 @@
 #define FOREACHR(it, l) for (auto it = l.rbegin(); it != l.rend(); it++)
 #define pb push_back
 #define MP make_pair
+#define abs(a) ((a) < 0 ? -(a) : (a))
 #define max(a, b) ((a) < (b) ? (b) : (a))
 #define min(a, b) (((a) > (b)) ? (b) : (a))
 #define MOD (1e9+7)
