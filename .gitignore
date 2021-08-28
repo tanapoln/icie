@@ -1,3 +1,6 @@
 main.e
 *.prob
 a.out
+problems/*.out
+problems/*.txt
+problems/*.zip
