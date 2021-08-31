@@ -115,7 +115,7 @@ void solve(int caseNo) {
 
     // debug_graph();
 
-    int minC = INF_I;
+    int minC = INT_MAX;
     FORL(v, 'A', 'Z') {
         int cost = 0;
         FOR(k, s.length()) {
@@ -131,7 +131,7 @@ void solve(int caseNo) {
         nopath: ;
     }
 
-    if (minC == INF_I) minC = -1;
+    if (minC == INT_MAX) minC = -1;
     cout << "Case #" << caseNo << ": " << minC << endl;
 
     clear_graph(g);

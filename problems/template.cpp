@@ -16,6 +16,12 @@
 #define DEBUGARR(arr, s, e) {FORL(_i, s, e){ cout << arr[_i] << " "; } cout << endl;}
 #define DEBUGVEC(vec) {FOREACH(_it, vec){ cout << (*_it) << " "; } cout << endl;}
 
+#ifdef ONLINE_JUDGE
+#define IFNOJ if (false)
+#else
+#define IFNOJ if (true)
+#endif
+
 using namespace std;
 
 typedef unsigned int uint;
@@ -28,6 +34,7 @@ typedef vector<ii> vii;
 typedef vector<vi> vvi;
 typedef map<int,int> mii;
 typedef set<int> si;
+typedef vector<vector<pair<int, int>>> graph_w;
 
 void solve() {
 

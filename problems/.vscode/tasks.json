@@ -10,6 +10,7 @@
 				"${file}",
 				"-O2",
 				"-std=c++17",
+				"-DONLINE_JUDGE",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}.out"
 			],
@@ -23,6 +24,27 @@
 				"kind": "build",
 				"isDefault": true
 			},
+			"detail": "compiler: /usr/bin/g++"
+		},
+		{
+			"type": "cppbuild",
+			"label": "NOT OJ: C++17 build current file",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"${file}",
+				"-O2",
+				"-std=c++17",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}.out"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
 			"detail": "compiler: /usr/bin/g++"
 		}
 	]
